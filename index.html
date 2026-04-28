@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Peças de Hardware</title>
+  <style>
+    /* Seletor de tag para a página com cor de fundo pastel */
+    body {
+      background-color: #b9e0e3;
+      font-family: Georgia, 'Times New Roman', serif;
+      margin: 0;
+      padding: 2%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container {
+      background-color: #d4eef1;
+      border-radius: 0.5rem;
+      padding: 2%;
+      width: 90%;
+      max-width: 60rem;
+      box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      /* font-size relativo para o título */
+      font-size: 1.5em;
+      text-align: center;
+      color: #3a6b70;
+      margin-bottom: 1.5em;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+    }
+
+    /* Seletor de tag para a tabela */
+    table {
+      border: 1px solid #ccc;
+      border-collapse: collapse; /* borda simples, não dupla */
+      margin: 0px;              /* margem 0px */
+      padding: 0px;             /* espaçamento interno 0px */
+      width: 100%;              /* largura relativa: ocupa toda a tela */
+      table-layout: fixed;      /* distribui colunas de forma fixa */
+    }
+
+    /*
+      table-layout: fixed — faz com que o navegador distribua as larguras das colunas
+      com base na largura definida na primeira linha ou no <col>, ignorando o conteúdo.
+      Isso melhora a performance de renderização e garante que a tabela não "estoure"
+      o container, mantendo colunas com tamanhos previsíveis e controlados.
+    */
+
+    /* Seletor aninhado para as linhas da tabela */
+    table tr {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      margin: 0.5em;            /* espaçamento externo relativo */
+    }
+
+    /* Seletor aninhado para células do cabeçalho e demais células */
+    table th,
+    table td {
+      text-align: center;
+      padding: 0.6em 0.4em;
+      word-wrap: break-word;
+    }
+
+    /* Seletor aninhado para as linhas de cabeçalho */
+    table thead tr {
+      background-color: #c8e4e6;
+    }
+
+    table th {
+      font-size: 0.85em;        /* font-size relativo */
+      text-transform: uppercase; /* letras em maiúsculas */
+      color: #3a6b70;
+      border-bottom: 2px solid #aad0d4;
+      letter-spacing: 0.05em;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #eef7f8;
+    }
+
+    table tbody tr:hover {
+      background-color: #d4eef1;
+      transition: background-color 0.2s ease;
+    }
+
+    table td {
+      color: #444;
+      font-size: 0.9em;
+    }
+
+    /* Responsividade para celular */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.1em;
+      }
+
+      table th {
+        font-size: 0.7em;
+      }
+
+      table td {
+        font-size: 0.75em;
+        padding: 0.4em 0.2em;
+      }
+    }
+
+    /* Responsividade para tablet */
+    @media (min-width: 481px) and (max-width: 768px) {
+      h1 {
+        font-size: 1.25em;
+      }
+
+      table th {
+        font-size: 0.78em;
+      }
+
+      table td {
+        font-size: 0.82em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Relatório anual de produção de peças</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Quantidade</th>
+          <th>Valor</th>
+          <th>Período de Produção</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Placa mãe NVIDIA</td>
+          <td>500</td>
+          <td>1.600,00</td>
+          <td>03/01/2023 - 03/31/2023</td>
+        </tr>
+        <tr>
+          <td>Fonte Gamemax</td>
+          <td>450</td>
+          <td>350,00</td>
+          <td>02/01/2023 - 02/29/2023</td>
+        </tr>
+        <tr>
+          <td>Processador AMD 3.7GHz</td>
+          <td>1.000</td>
+          <td>587,00</td>
+          <td>02/01/2023 - 02/29/2023</td>
+        </tr>
+        <tr>
+          <td>Memória DDR4 8G</td>
+          <td>2.000</td>
+          <td>200,00</td>
+          <td>01/01/2023 - 01/31/2023</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--
+    RESPOSTA À PERGUNTA:
+    Se a largura da tabela fosse configurada com 1500px (unidade absoluta) em vez de 100%
+    (unidade relativa), em uma tela de celular (que geralmente tem 360px a 412px de largura)
+    a tabela ficaria muito maior do que a tela. O resultado seria:
+    - Uma barra de rolagem horizontal apareceria, forçando o usuário a rolar para ver o conteúdo.
+    - Parte do conteúdo ficaria "escondido" para fora da área visível.
+    - O layout quebraria completamente, prejudicando a usabilidade e a leitura.
+    Com unidades relativas (como 100%), a tabela se adapta automaticamente à largura
+    disponível em qualquer dispositivo, garantindo a responsividade.
+    -->
+  </div>
+</body>
+</html>
